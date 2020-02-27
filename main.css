@@ -245,6 +245,13 @@ main,
 .project,
 img,
 .side-header,
-.side-menu, .contact-box {
+.side-menu,
+.contact-box {
     outline: 3px dotted black;
+}
+
+.greybox {
+    height: 250px;
+    width: 300px;
+    background-color: gray;
 }
