@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    color: black;
+}
+
+/* vertical spacing */
+
+main {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.header {
+    background-color: white;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    min-width: 270px;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: white;
+}
+
+li a {
+    text-decoration: none;
+}
+
+h2 {
+    padding-bottom: 10px;
+}
+
+.header li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid white;
+}
+
+.header p {
+    display: block;
+    padding: 20px 20px;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: white;
+}
+
+.header .logo {
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+/* menu */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 30px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: black;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: black;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+.side-menu {
+    display: none;
+}
+
+.section-panel {
+    padding: 40px;
+}
+
+.project-box {
+    padding-top: 40px;
+    outline: 5px;
+    outline-color: black;
+}
+
+p {
+    padding: 10px 0px 10px 0px;
+    font-size: 12pt;
+}
+
+.project {
+    width: 300px;
+    height: auto;
+}
+
+img.project {
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-box img {
+    height: 40px;
+    margin: 10px;
+}
+
+.contact-box div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media only screen and (min-width: 800px) {
+    .side-header h1 {
+        font-size: 26pt;
+    }
+
+    .side-header h2 {
+        font-size: 18pt;
+    }
+
+    .header {
+        display: none;
+        border-style: none;
+    }
+
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .side-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+        padding: 20px;
+        min-width: 280px;
+        flex-wrap: nowrap;
+        border-style: solid;
+        border-width: 0px 4px 0px 0px;
+    }
+
+    .side-header ul {
+        padding: 40px;
+        font-size: 18px;
+    }
+
+    .side-header li {
+        padding: 10px;
+    }
+
+    .contact-box {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .project {
+        width: 600px;
+        height: auto;
+    }
+}
+
+div,
+section,
+main,
+.header,
+.project,
+img,
+.side-header,
+.side-menu, .contact-box {
+    outline: 3px dotted black;
+}
